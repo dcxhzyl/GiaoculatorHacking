@@ -30,7 +30,7 @@ chrome.runtime.onInstalled.addListener(function() {
 
 var usrAssignmentsInfo = {};
 var usrAssignmentsBriefInfo = [];
-const websitesKeywordThatDemageTeenagersHealth=["porn","sexual"]
+const websitesKeywordThatDemageTeenagersHealth=["porn","sexual"] 
 const gpaRules = [
     {"displayName":"A+","minValue":97.00,"maxValue":9999.90,"sort":0,"gpa":4.30},
     {"displayName":"A","minValue":93.00,"maxValue":96.9999,"sort":1,"gpa":4.00},
