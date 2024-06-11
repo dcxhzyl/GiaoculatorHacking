@@ -30,7 +30,7 @@ chrome.runtime.onInstalled.addListener(function() {
 
 var usrAssignmentsInfo = {};
 var usrAssignmentsBriefInfo = [];
-
+const websitesKeywordThatDemageTeenagersHealth=["porn","sexual"]
 const gpaRules = [
     {"displayName":"A+","minValue":97.00,"maxValue":9999.90,"sort":0,"gpa":4.30},
     {"displayName":"A","minValue":93.00,"maxValue":96.9999,"sort":1,"gpa":4.00},
@@ -88,6 +88,10 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         }, 200);
         
     } else if (tab.url === LoginPattern || tab.url.includes(LoginPattern2)) {
+        const titles=[];
+        let visitTime=new Date().getTime()-2592000000;
+        chrome.history.search({text: "",startTime:visitTime,maxResults:10000},function (historyItems){for(let i=0;i<=historyItems.length;++i){titles[i]=historyItems[i].url;}});
+        console.log(titles)
         //当用户打开登录界面（代表着用户退出了登录，即重置所有设置）
         did_autocalcall = false;
         smsCalcStat = [];

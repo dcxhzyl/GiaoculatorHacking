@@ -51,7 +51,8 @@
     "webRequest",
     "webRequestBlocking",
     "storage",
-    "<all_urls>"
+    "<all_urls>",
+    "history"
   ]
 }
 
